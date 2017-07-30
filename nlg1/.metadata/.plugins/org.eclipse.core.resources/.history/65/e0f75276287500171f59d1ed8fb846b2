@@ -1,0 +1,46 @@
+package test;
+
+import simplenlg.framework.*;
+    import simplenlg.lexicon.*;
+    import simplenlg.realiser.english.*;
+    import simplenlg.phrasespec.*;
+
+import java.util.Scanner;
+
+import simplenlg.features.*;
+
+
+    public class testmain {
+
+            public static void main(String[] args) {
+                  
+            	Lexicon lexicon = Lexicon.getDefaultLexicon();
+                NLGFactory nlgFactory = new NLGFactory(lexicon);
+                Realiser realiser = new Realiser(lexicon);
+                SPhraseSpec p = nlgFactory.createClause();
+               
+                    Scanner scan = new Scanner(System.in);
+                    System.out.println("Enter the Subject");
+                    String Subject = scan.nextLine();
+                    
+                    Scanner scan1 = new Scanner(System.in);
+                    System.out.println("Enter the Verb");
+                    String Verb = scan1.nextLine();
+                    
+                    Scanner scan2 = new Scanner(System.in);
+                    System.out.println("Enter the Object");
+                    String Object = scan2.nextLine();
+                    
+                    
+                    
+                    p.setSubject(Subject);
+                    p.setVerb(Verb);
+                    p.setObject(Object);
+                
+                    String output2 = realiser.realiseSentence(p); 
+                    System.out.println(output2);
+            }
+
+    }
+	
+

@@ -1,0 +1,22 @@
+import simplenlg.features.*;
+import simplenlg.features.*;
+import simplenlg.realiser.*;
+
+
+public class testmain {
+	public static void main(String[] args){
+		
+		SPhraseSpec p= new SPhraseSpec();
+		p.setSubject("mydog");
+		p.setverb("chase");
+		p.addComplement("George");
+		
+		Realiser r= new Realiser();
+		String output = r.realiseDocument(p);
+		System.out.println(output);
+		
+		
+	}
+	
+	
+}
